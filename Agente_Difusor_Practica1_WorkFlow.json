@@ -1,0 +1,579 @@
+{
+  "name": "Agente_Difusor_Practica1_WorkFlow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "formulario-1",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -976,
+        -352
+      ],
+      "id": "5560629f-b714-4f66-b5e3-04f1f8644712",
+      "name": "Webhook",
+      "webhookId": "8b063ac8-05d6-43d5-9154-7001996d4d94"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "1wSlAHXH_dr3gimb5nV_vEEiFgeCPa_y0W0NuV6K6H5Q",
+          "mode": "list",
+          "cachedResultName": "Respuestas Webhook n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wSlAHXH_dr3gimb5nV_vEEiFgeCPa_y0W0NuV6K6H5Q/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1wSlAHXH_dr3gimb5nV_vEEiFgeCPa_y0W0NuV6K6H5Q/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "TituloActividad": "={{ $('Agregar el ID en las respuestas').item.json.body.TituloActividad }}",
+            "ID_Registro": "={{ $('Agregar el ID en las respuestas').item.json.ID_Registro }}",
+            "Responsable": "={{ $('Agregar el ID en las respuestas').item.json.body.Responsable }}",
+            "FechaLugar": "={{ $('Agregar el ID en las respuestas').item.json.body.FechaLugar }}",
+            "DescripcionBreve": "={{ $('Agregar el ID en las respuestas').item.json.body.DescripcionBreve }}",
+            "ArchivosAdjuntos": "={{ $('Agregar el ID en las respuestas').item.json.body.ArchivosAdjuntos }}",
+            "EnlaceAdicional": "={{ $('Agregar el ID en las respuestas').item.json.body.EnlaceAdicional }}",
+            "CanalesDifusion": "={{ $('Agregar el ID en las respuestas').item.json.body.CanalesDifusion }}",
+            "LinkFacebook": "={{ $json.LinkFacebook }}"
+          },
+          "matchingColumns": [
+            "ID_Registro"
+          ],
+          "schema": [
+            {
+              "id": "ID_Registro",
+              "displayName": "ID_Registro",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "TituloActividad",
+              "displayName": "TituloActividad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Responsable",
+              "displayName": "Responsable",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "FechaLugar",
+              "displayName": "FechaLugar",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "DescripcionBreve",
+              "displayName": "DescripcionBreve",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "ArchivosAdjuntos",
+              "displayName": "ArchivosAdjuntos",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "EnlaceAdicional",
+              "displayName": "EnlaceAdicional",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "CanalesDifusion",
+              "displayName": "CanalesDifusion",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "LinkFacebook",
+              "displayName": "LinkFacebook",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "cellFormat": "USER_ENTERED"
+        }
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        1328,
+        -352
+      ],
+      "id": "1ba7befd-0d59-47d9-86ac-e85ff28233f9",
+      "name": "Append or update row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "e9b2TKaWFMCTJnyp",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.CanalesDifusion }}",
+                    "rightValue": "Facebook",
+                    "operator": {
+                      "type": "array",
+                      "operation": "contains",
+                      "rightType": "any"
+                    },
+                    "id": "0a88c81d-1de2-4b6d-935b-ea845e2bcb44"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "loose",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "0db5ff99-0f51-4011-8b85-b2167c06c169",
+                    "leftValue": "={{ $json.body.CanalesDifusion }}",
+                    "rightValue": "={{ $json.body.CanalesDifusion[1] }}{{ $json.body.CanalesDifusion[2] }}",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -448,
+        -352
+      ],
+      "id": "b2695f24-a4a3-414e-8ca1-2c8a1bcab176",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "66adc68e-5ddc-48ba-a72e-128d2caffdff",
+              "name": "ID_Registro",
+              "value": "={{Date.now()}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -736,
+        -352
+      ],
+      "id": "2424cee2-19a8-4d54-b2db-afb1c530d6a5",
+      "name": "Agregar el ID en las respuestas"
+    },
+    {
+      "parameters": {
+        "httpRequestMethod": "POST",
+        "graphApiVersion": "v23.0",
+        "node": "820218114513646",
+        "edge": "photos",
+        "options": {
+          "queryParameters": {
+            "parameter": [
+              {
+                "name": "url",
+                "value": "={{ $json.body.ArchivosAdjuntos }}"
+              },
+              {
+                "name": "caption",
+                "value": "={{ $json.body.DescripcionBreve }} Más Informacion: {{ $json.body.EnlaceAdicional }}"
+              }
+            ]
+          }
+        }
+      },
+      "type": "n8n-nodes-base.facebookGraphApi",
+      "typeVersion": 1,
+      "position": [
+        -144,
+        -736
+      ],
+      "id": "05448504-55dc-4191-9f94-ebf183042798",
+      "name": "Facebook Graph API",
+      "retryOnFail": false,
+      "alwaysOutputData": false,
+      "credentials": {
+        "facebookGraphApi": {
+          "id": "w4abcI5TJGUT46cR",
+          "name": "Facebook Graph account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "8c5fe578-f138-4685-84a0-75fd32c37d82",
+              "name": "LinkFacebook",
+              "value": "=https://www.facebook.com/82028114513846/posts/{{$json.id}}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        528,
+        -720
+      ],
+      "id": "905f4e98-5d06-4497-8a0b-e0ac9692d57f",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        992,
+        -352
+      ],
+      "id": "a0d19941-ed24-46e9-8956-31cd36de175d",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.post_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    },
+                    "id": "6d96b311-906f-4f5b-aac9-6ebcba3e48d2"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c179515a-1da1-4a83-9ad6-4b4071d6a20d",
+                    "leftValue": "={{ $json.post_id }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "string",
+                      "operation": "notExists",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        144,
+        -736
+      ],
+      "id": "fd002982-799b-4e02-9c3d-0100a7db69e5",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "291d2ad0-b425-4ba9-ba7c-1e94f0549949",
+              "name": "AsuntoEmail",
+              "value": "=Fallo en Publicacion: {{ $('Switch').item.json.body.TituloActividad }}",
+              "type": "string"
+            },
+            {
+              "id": "d3325151-012b-49e2-9117-29fe12ad053a",
+              "name": "EmailResponsable",
+              "value": "={{ $('Switch').item.json.body.Responsable }}",
+              "type": "string"
+            },
+            {
+              "id": "623c6ffc-b1bd-45be-945a-85c0c995b86d",
+              "name": "CuerpoError",
+              "value": "=Error: {{ $('Facebook Graph API').item.json.headers['www-authenticate'] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        320,
+        -528
+      ],
+      "id": "7ab4aa90-a4f2-403b-9d61-98d87417bac5",
+      "name": "Edit Fields1"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.EmailResponsable }}",
+        "subject": "={{ $json.AsuntoEmail }}",
+        "message": "=<h3>ALERTA: FALLO CRÍTICO EN AGENTE DIFUSOR</h3>  <p>El Agente Automatizado falló al intentar publicar la siguiente actividad en Facebook. Se requiere una acción manual:</p>  <table border=\"1\" cellpadding=\"5\" cellspacing=\"0\">     <tr><td><b>Actividad:</b></td><td>{{ $('Agregar el ID en las respuestas').item.json.body.TituloActividad }}</td></tr>     <tr><td><b>ID de Registro:</b></td><td>{{ $('Agregar el ID en las respuestas').item.json.ID_Registro }}</td></tr>     <tr><td><b>Responsable:</b></td><td>{{ $json.EmailResponsable }}</td></tr> </table>  <hr>  <p><b>Motivo del Fallo Técnico:</b><br> <span style=\"color: red;\">{{$json.CuerpoError}}</span></p>  <p><i>Por favor, revise la vigencia del Token de Acceso de la página de Facebook.</i></p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        560,
+        -528
+      ],
+      "id": "55a04f3c-8a5f-45f9-9cc5-0aaef933aac7",
+      "name": "Send a message",
+      "webhookId": "07845977-6471-4ce7-9b24-3f17c98e859d",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "TgY5pSBbMBsCXt3q",
+          "name": "Gmail account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Agregar el ID en las respuestas",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        []
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "Facebook Graph API",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Agregar el ID en las respuestas": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Facebook Graph API": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "timezone": "America/Santiago"
+  },
+  "versionId": "ca947da8-9994-4891-8c30-bb6b07b092fe",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "fdf9f219cf5ef7dc62881109b2f228ccbc488e46622d8696107da0ec14351e32"
+  },
+  "id": "e1zzm3gydCESRVvd",
+  "tags": []
+}
