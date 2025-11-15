@@ -23,3 +23,4 @@ Una vez dentro del n8n mediante LocalHost en tu buscador deberas crear o iniciar
 
 para que el flujo trabaje correctamente usaremos ngrok como tunel de conexion, primero descargaremos Ngrok desde su pagina web o la tienda de microsoft (en mi caso lo instale por la tienda de microsoft ya que por la pagina web me daba una alerta de troyano por el antivirus de microsoft), luego hay que crearse una cuenta en su pagina y una vez dentro en la parte de "setup & installation" encontraremos un comando como el siguiente "ngrok config add-authtoken [codigo de autentificación], este codigo lo colocaremos en nuestra consola y ya estara el tunel vinculado a nuestra cuenta, ahora solo colocamos el comando "ngrok http [puerto del docker]" para iniciar la conexion del flujo con los formularios y apis.
 
+recordar utilizar cada vez el link que te proporciona ngrok cambiarlo en el formulario forms en la parte de app script para poder correr el flujo completo.
